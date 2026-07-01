@@ -9,12 +9,13 @@ services:
       - "5433:5432"
 
   airflow:
-    image: apache/airflow:2.9.3-python3.11
+    build:
+      context: .devcontainer
+      dockerfile: Dockerfile
     depends_on:
       - warehouse
     environment:
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
-      _PIP_ADDITIONAL_REQUIREMENTS: "dbt-postgres==1.8.0"
     ports:
       - "8080:8080"
     command: standalone
