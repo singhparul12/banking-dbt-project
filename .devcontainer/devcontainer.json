@@ -1,0 +1,7 @@
+{
+  "name": "banking-dbt-airflow",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "airflow",
+  "workspaceFolder": "/opt/airflow",
+  "forwardPorts": [8080, 5433]
+}
